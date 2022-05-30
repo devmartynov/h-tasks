@@ -47,4 +47,25 @@ public class AppTest {
         var symmetricalPoint = App.getSymmetricalPoint(point);
         assertThat(symmetricalPoint).isNotSameAs(point);
     }
+
+    @Test
+    void testCircle1() {
+        var circle = new Circle(1, 2, 5);
+        var actual = App.getCircumference(circle);
+        assertThat(actual).isCloseTo(31.4, within(0.05));
+    }
+
+    @Test
+    void testCircle2() {
+        var circle = new Circle(1, 2, 10);
+        var actual = App.getCircumference(circle);
+        assertThat(actual).isCloseTo(62.8, within(0.05));
+    }
+
+    @Test
+    void testCircle3() {
+        var circle = new Circle(1, 2, 0);
+        var actual = App.getCircumference(circle);
+        assertThat(actual).isEqualTo(0);
+    }
 }

@@ -15,4 +15,8 @@ public class App {
     public static Point getSymmetricalPoint(Point point) {
         return new Point(point.getCoordinateX(), -point.getCoordinateY());
     }
+
+    public static double getCircumference(Circle circle) {
+        return circle.radius * 2 * Math.PI;
+    }
 }
