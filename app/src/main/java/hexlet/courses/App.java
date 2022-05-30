@@ -3,6 +3,7 @@
  */
 package hexlet.courses;
 
+import org.apache.commons.lang3.StringUtils;
 
 public class App {
     public static void main(String[] args) {
@@ -18,5 +19,9 @@ public class App {
 
     public static double getCircumference(Circle circle) {
         return circle.radius * 2 * Math.PI;
+    }
+
+    public static boolean isPalindrome(String string) {
+        return StringUtils.reverse(string).equalsIgnoreCase(string);
     }
 }

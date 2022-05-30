@@ -68,4 +68,17 @@ public class AppTest {
         var actual = App.getCircumference(circle);
         assertThat(actual).isEqualTo(0);
     }
+
+    @Test
+    void testIsPalindrome() {
+        assertThat(App.isPalindrome("wow")).isTrue();
+        assertThat(App.isPalindrome("hexlet")).isFalse();
+        assertThat(App.isPalindrome("asdffdsa")).isTrue();
+    }
+
+    @Test
+    void testIsPalindromeWithUppercase() {
+        assertThat(App.isPalindrome("Wow")).isTrue();
+        assertThat(App.isPalindrome("ABCcba")).isTrue();
+    }
 }
