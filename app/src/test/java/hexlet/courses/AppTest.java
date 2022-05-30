@@ -81,4 +81,28 @@ public class AppTest {
         assertThat(App.isPalindrome("Wow")).isTrue();
         assertThat(App.isPalindrome("ABCcba")).isTrue();
     }
+
+    @Test
+    void testGetFigureSquare1() {
+        var quadrate = new Quadrate(10);
+        var actual = App.getFigureSquare(quadrate);
+        var expected = "Square of quadrate is 100";
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void testGetFigureSquare2() {
+        var quadrate = new Quadrate(5);
+        var actual = App.getFigureSquare(quadrate);
+        var expected = "Square of quadrate is 25";
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void testGetFigureSquare3() {
+        var circle = new Circle(10);
+        var actual = App.getFigureSquare(circle);
+        var expected = "Square of circle is 314";
+        assertThat(actual).isEqualTo(expected);
+    }
 }

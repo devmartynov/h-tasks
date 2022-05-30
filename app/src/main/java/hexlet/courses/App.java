@@ -24,4 +24,8 @@ public class App {
     public static boolean isPalindrome(String string) {
         return StringUtils.reverse(string).equalsIgnoreCase(string);
     }
+
+    public static String getFigureSquare(Geometric figure) {
+        return "Square of " + figure.getName() + " is " + figure.getSquare();
+    }
 }

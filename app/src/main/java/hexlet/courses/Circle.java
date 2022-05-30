@@ -1,6 +1,6 @@
 package hexlet.courses;
 
-public class Circle {
+public class Circle implements Geometric {
     public int x;
     public int y;
     public int radius;
@@ -9,5 +9,21 @@ public class Circle {
         this.x = x;
         this.y = y;
         this.radius = radius;
+    }
+
+    Circle(int radius) {
+        this.x = 0;
+        this.y = 0;
+        this.radius = radius;
+    }
+
+    @Override
+    public String getName() {
+        return "circle";
+    }
+
+    @Override
+    public int getSquare() {
+        return (int)(Math.PI * radius * radius);
     }
 }
