@@ -11,4 +11,8 @@ public class App {
     public static double getSquare(int side1, int side2, int angle) {
         return (side1 * side2 * Math.sin(angle * Math.PI / 180)) / 2;
     }
+
+    public static Point getSymmetricalPoint(Point point) {
+        return new Point(point.getCoordinateX(), -point.getCoordinateY());
+    }
 }

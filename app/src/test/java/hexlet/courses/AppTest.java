@@ -24,4 +24,27 @@ public class AppTest {
         var actual = App.getSquare(4, 5, 0);
         assertThat(actual).isEqualTo(0);
     }
+
+    @Test
+    void testSymmetricalPoint1() {
+        var point = new Point(5, 7);
+        var symmetricalPoint = App.getSymmetricalPoint(point);
+        assertThat(symmetricalPoint.getCoordinateX()).isEqualTo(5);
+        assertThat(symmetricalPoint.getCoordinateY()).isEqualTo(-7);
+    }
+
+    @Test
+    void testSymmetricalPoint2() {
+        var point = new Point(-3, -9);
+        var symmetricalPoint = App.getSymmetricalPoint(point);
+        assertThat(symmetricalPoint.getCoordinateX()).isEqualTo(-3);
+        assertThat(symmetricalPoint.getCoordinateY()).isEqualTo(9);
+    }
+
+    @Test
+    void testIsNotSamePoint() {
+        var point = new Point(1, 2);
+        var symmetricalPoint = App.getSymmetricalPoint(point);
+        assertThat(symmetricalPoint).isNotSameAs(point);
+    }
 }
