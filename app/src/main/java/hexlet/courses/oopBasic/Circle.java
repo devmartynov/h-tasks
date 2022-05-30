@@ -1,4 +1,4 @@
-package hexlet.courses;
+package hexlet.courses.oopBasic;
 
 public class Circle implements Geometric {
     public int x;

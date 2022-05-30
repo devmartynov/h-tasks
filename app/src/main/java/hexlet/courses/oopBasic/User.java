@@ -1,4 +1,4 @@
-package hexlet.courses;
+package hexlet.courses.oopBasic;
 
 public class User {
     private int id;

@@ -1,10 +1,14 @@
-package hexlet.courses;
+package hexlet.courses.oopBasic;
 
 public class Quadrate implements Geometric {
     private int sideSize;
 
     Quadrate(int sideSize) {
         this.sideSize = sideSize;
+    }
+
+    public int getSideSize() {
+        return sideSize;
     }
 
     @Override

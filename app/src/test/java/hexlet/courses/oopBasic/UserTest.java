@@ -1,4 +1,4 @@
-package hexlet.courses;
+package hexlet.courses.oopBasic;
 
 import org.junit.jupiter.api.Test;
 
