@@ -7,4 +7,8 @@ package hexlet.courses;
 public class App {
     public static void main(String[] args) {
     }
+
+    public static double getSquare(int side1, int side2, int angle) {
+        return (side1 * side2 * Math.sin(angle * Math.PI / 180)) / 2;
+    }
 }
