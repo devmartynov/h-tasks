@@ -1,4 +1,4 @@
-package hexlet.courses.oopBasic;
+package hexlet.courses.lesson7.theory;
 
 interface Geometric {
     String getName();

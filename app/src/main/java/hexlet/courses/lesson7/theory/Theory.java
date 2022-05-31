@@ -1,8 +1,8 @@
-package hexlet.courses.oopBasic;
+package hexlet.courses.lesson7.theory;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class Index {
+public class Theory {
     public static double getSquare(int side1, int side2, int angle) {
         return (side1 * side2 * Math.sin(angle * Math.PI / 180)) / 2;
     }

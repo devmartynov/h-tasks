@@ -1,4 +1,4 @@
-package hexlet.courses.oopBasic;
+package hexlet.courses.lesson7.theory;
 
 public class Segment {
     private Point beginPoint;
