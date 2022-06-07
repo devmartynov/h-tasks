@@ -63,4 +63,103 @@ public class ExercisesTest {
         var actual = Exercises.buildSnailPath(matrix);
         assertThat(actual).containsExactly(expected);
     }
+
+    @Test
+    public void testCalcShipsCount() {
+        int[][] battleField1 = {};
+        assertThat(Exercises.calcShipsCount(battleField1)).isEqualTo(0);
+
+        int[][] battleField2 = {{1}};
+        assertThat(Exercises.calcShipsCount(battleField2)).isEqualTo(1);
+
+        int[][] battleField3 = {{0}};
+        assertThat(Exercises.calcShipsCount(battleField3)).isEqualTo(0);
+
+        int[][] battleField4 = {
+                {0, 0, 1},
+                {0, 0, 0},
+                {1, 1, 0},
+        };
+        assertThat(Exercises.calcShipsCount(battleField4)).isEqualTo(2);
+
+        int[][] battleField5 = {
+                {1, 1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 1, 1},
+                {0, 0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0, 1},
+                {0, 0, 0, 0, 0, 1},
+                {1, 1, 0, 1, 0, 0},
+        };
+        assertThat(Exercises.calcShipsCount(battleField5)).isEqualTo(6);
+
+        int[][] battleField6 = {
+                {1, 0, 1, 0, 0, 0},
+                {0, 0, 1, 0, 1, 1},
+                {1, 0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 0, 1},
+                {0, 0, 0, 0, 0, 1},
+                {1, 1, 0, 1, 0, 0},
+        };
+        assertThat(Exercises.calcShipsCount(battleField6)).isEqualTo(8);
+
+        int[][] battleField7 = {
+                {1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0},
+        };
+        assertThat(Exercises.calcShipsCount(battleField7)).isEqualTo(3);
+
+        int[][] battleField8 = {
+                {1, 0, 1, 1},
+                {1, 0, 0, 0},
+                {0, 0, 1, 0},
+                {1, 0, 1, 0},
+        };
+        assertThat(Exercises.calcShipsCount(battleField8)).isEqualTo(4);
+    }
+
+    @Test
+    public void testValidateField() {
+        int[][] battleField1 = {};
+        assertThat(Exercises.isValidField(battleField1)).isTrue();
+
+        int[][] battleField2 = {
+                {0, 1, 0, 0},
+                {1, 0, 0, 1},
+                {0, 0, 0, 0},
+                {0, 1, 1, 1},
+        };
+        assertThat(Exercises.isValidField(battleField2)).isFalse();
+
+        int[][] battleField3 = {
+                {0, 1, 1, 0},
+                {0, 0, 0, 0},
+                {0, 1, 0, 0},
+                {0, 1, 0, 1},
+        };
+        assertThat(Exercises.isValidField(battleField3)).isTrue();
+
+        int[][] battleField4 = {
+                {1, 1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 1, 1},
+                {0, 0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0, 1},
+                {0, 0, 0, 0, 0, 1},
+                {1, 1, 0, 1, 0, 0},
+        };
+        assertThat(Exercises.isValidField(battleField4)).isTrue();
+
+        int[][] battleField5 = {
+                {1, 1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 1, 1},
+                {0, 0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0, 1},
+                {0, 0, 1, 0, 0, 1},
+                {1, 0, 0, 1, 0, 0},
+        };
+        assertThat(Exercises.isValidField(battleField5)).isFalse();
+    }
 }
