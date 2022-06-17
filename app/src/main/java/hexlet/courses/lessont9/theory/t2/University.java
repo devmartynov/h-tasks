@@ -1,6 +1,7 @@
 package hexlet.courses.lessont9.theory.t2;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class University implements Iterable<Student> {
     private Student[] students;
@@ -11,10 +12,10 @@ public class University implements Iterable<Student> {
 
     @Override
     public Iterator<Student> iterator() {
-        return new UniversityIterator();
+        return new StudentsIterator();
     }
 
-    private class UniversityIterator implements Iterator<Student> {
+    private class StudentsIterator implements Iterator<Student> {
         private int index = 0;
 
         @Override
@@ -23,7 +24,11 @@ public class University implements Iterable<Student> {
         }
 
         @Override
-        public Student next() {
+        public Student next() throws NoSuchElementException {
+            if (!this.hasNext()) {
+                throw new NoSuchElementException("No element found");
+            }
+
             return University.this.students[index++];
         }
     }
