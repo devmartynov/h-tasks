@@ -65,15 +65,23 @@ public class ArrayCollection<T> implements Collection<T> {
                 continue;
             }
 
-            // i == 0 ? size - 1 : size - i
-
             if (array[i].equals(o)) {
-                System.arraycopy(
-                    array,
-                    size - 1 != i ? i + 1 : 0,
-                    array, i,
-                    i == 0 ? size - 1 : size - i
-                );
+                var isBegin = i == 0;
+                var isEnd = i == size - 1;
+
+                if (size == 1) {
+                    array[0] = null;
+                } else if (!isEnd) {
+                    System.arraycopy(
+                        array,
+                        i + 1,
+                        array,
+                        isBegin ? 0 : i,
+                        isBegin ? size - 1 : size - (i + 1)
+                    );
+                }
+
+                array[size - 1] = null;
                 --size;
                 return true;
             }
@@ -110,7 +118,22 @@ public class ArrayCollection<T> implements Collection<T> {
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        T[] newArray = (T[]) new Object[size];
+        System.arraycopy(array, 0, newArray, 0, size);
+
+        var removeElementsCounter = 0;
+        for (T elem : newArray) {
+            if (!c.contains(elem)) {
+                if (!remove(elem)) {
+                    var r = 1;
+                }
+                removeElementsCounter++;
+            } else {
+                var u = 1;
+            }
+        }
+
+        return removeElementsCounter != 0;
     }
 
     @Override
